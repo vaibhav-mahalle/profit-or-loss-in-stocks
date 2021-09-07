@@ -1,18 +1,21 @@
 const initialPrice = document.querySelector("#stock-price");
-const number = document.querySelector("#number");
+const amount = document.querySelector("#amount");
 const finalPrice = document.querySelector("#final-price");
 const inputBtn = document.querySelector("#enter");
+const output = document.querySelector("#output-box");
 
 var profit = 0;
+var noofstocks = 0;
 var loss = 0;
 var profitPercentage=0;
 var lossPercentage= 0;
+var totalvalue=0;
 
 
 function calculatePercentage(difference)
 {
     var percentage = (difference/Number(initialPrice.value))*100 ;
-
+    percentage = Math.round(percentage);
     return percentage;
 }
 
@@ -23,32 +26,40 @@ function calculateDifference()
 
     if(difference>0)
     {
-        profit = difference ;
+        profit = difference * noofstocks ;
+
         profitPercentage = calculatePercentage(difference);
         console.log(profitPercentage);
+       
     }
     else
     {
-        loss = Math.abs(difference);
-        lossPercentage = calculatePercentage(loss);
+        loss = Math.abs(difference)*noofstocks;
+        console.log(loss);
+        lossPercentage = calculatePercentage(Math.abs(difference));
         console.log(lossPercentage);
+       
     }
 }
 
 function clickHandler(){
+     noofstocks=parseInt(amount.value);
+     
     calculateDifference();
     
     if(profit>0)
     {
-        
+        console.log('hello');
+        output.innerText = `Jab Profit Dikhta hai, toh har koi jhukta hai💰💰:Profit= ${profit}rs ProfitPercentage= ${profitPercentage}%`;
     }
     if(loss>0)
     {
-
+        console.log('hello loss');
+        output.innerText = `Emotion mein insaan hamesa galti karta hai!:Loss=${loss}rs  LossPercentage=${lossPercentage}% `;
     }
-    else
+    if(profit===0 && loss===0)
     {
-
+        output.innerText = `kuch nhi mila re Baba tereko!!`;
     }
 
 }
