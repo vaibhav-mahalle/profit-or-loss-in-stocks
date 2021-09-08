@@ -40,8 +40,17 @@ function calculateDifference() {
 function clickHandler() {
     noofstocks = parseInt(amount.value);
 
-    if (Number(initialPrice.value) < 0 || Number(finalPrice.value) < 0 || noofstocks < 0) {
-        output.innerText = "Please enter positive values.";
+    if (Number(initialPrice.value) <= 0 || Number(finalPrice.value) < 0 || noofstocks <= 0) {
+        if (noofstocks <= 0) {
+            output.innerText = "No of stocks cannot be less than or equal to zero.";
+        }
+        if (Number(initialPrice.value) <= 0) {
+            output.innerText = "Initial price cannot be less than or equal to zero.";
+        }
+        if (Number(finalPrice.value) < 0) {
+            output.innerText = "Current price of stock cannot be less than zero.";
+        }
+        
     } 
     else 
     {
