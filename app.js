@@ -41,7 +41,7 @@ function clickHandler() {
     noofstocks = parseInt(amount.value);
 
     if (Number(initialPrice.value) < 0 || Number(finalPrice.value) < 0 || noofstocks < 0) {
-        output.innerText = "One or more value is negative.Please enter positive values.";
+        output.innerText = "Please enter positive values.";
     } 
     else 
     {
