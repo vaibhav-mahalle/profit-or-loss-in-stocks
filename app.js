@@ -52,7 +52,7 @@ function clickHandler() {
             output.innerText = `Way to go 💰💰:Profit= ${profit}rs ProfitPercentage= ${profitPercentage}%`;
         }
         if (loss > 0) {
-            output.innerText = `Oh no you have lost :Loss=${loss}rs  LossPercentage=${lossPercentage}% `;
+            output.innerText = `Oh no you have lost money : Loss=${loss}rs  LossPercentage=${lossPercentage}% `;
         }
         if (profit === 0 && loss === 0) {
             output.innerText = `No Profit No Loss!!`;
