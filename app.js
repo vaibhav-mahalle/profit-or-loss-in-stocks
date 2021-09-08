@@ -40,20 +40,22 @@ function calculateDifference() {
 function clickHandler() {
     noofstocks = parseInt(amount.value);
 
-    if (Number(initialPrice.value) < 0 || Number(initialPrice.value) < 0 || noofstocks < 0) {
+    if (Number(initialPrice.value) < 0 || Number(finalPrice.value) < 0 || noofstocks < 0) {
         output.innerText = "One or more value is negative.Please enter positive values.";
-    } else {
+    } 
+    else 
+    {
         calculateDifference();
 
         if (profit > 0) {
 
-            output.innerText = `Jab Profit Dikhta hai, toh har koi jhukta hai💰💰:Profit= ${profit}rs ProfitPercentage= ${profitPercentage}%`;
+            output.innerText = `Way to go 💰💰:Profit= ${profit}rs ProfitPercentage= ${profitPercentage}%`;
         }
         if (loss > 0) {
-            output.innerText = `Emotion mein insaan hamesa galti karta hai!:Loss=${loss}rs  LossPercentage=${lossPercentage}% `;
+            output.innerText = `Oh no you have lost :Loss=${loss}rs  LossPercentage=${lossPercentage}% `;
         }
         if (profit === 0 && loss === 0) {
-            output.innerText = `kuch nhi mila re Baba tereko!!`;
+            output.innerText = `No Profit No Loss!!`;
         }
 
     }
