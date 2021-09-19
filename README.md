@@ -4,4 +4,4 @@
  
  Based on this inputs we calculate how is portfolio doing is it making profit or loss
  
- Technologies: HTML5,CSS3,VanillJs
+ Technologies: HTML5,CSS3,VanillaJs
